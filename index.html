@@ -8,7 +8,55 @@
 </head>
 
 <body>
-    <div>Ciudadania Americana 2026</div>
+    <div>Ciudadania Americana 2026 66666</div>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Odio saepe et recusandae, at ut necessitatibus amet, aperiam voluptas nostrum corrupti deleniti
+        asperiores delectus repellendus quam nam sint praesentium minima laboriosam.
+    </p>
+
+    <div id="idcard"></div>
+
+    <script>
+        const card = document.getElementById('idcard');
+
+        const listData = [
+            {
+                id: 1,
+                pregunta: 'Cual es mi nombre?',
+                Repuesta: ["uno", "dos"]
+            },
+            {
+                id: 2,
+                pregunta: 'Cual es mi edad?',
+                Repuesta: ["25", "30", "35"]
+            },
+            {
+                id: 3,
+                pregunta: 'Donde vives?',
+                Repuesta: ["New York", "Los Angeles", "Chicago"]
+            }
+        ];
+
+        listData.forEach((item) => {
+            const question = document.createElement('h3');
+            question.textContent = item.pregunta;
+            card.appendChild(question);
+            const answerList = document.createElement('ul');
+            item.Repuesta.forEach((answer) => {
+                const answerItem = document.createElement('li');
+                answerItem.textContent = answer;
+                answerList.appendChild(answerItem);
+            });
+            card.appendChild(answerList);
+        });
+
+
+
+    </script>
+
+
+
 </body>
 
 </html>
