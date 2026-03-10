@@ -70,6 +70,7 @@
             background-color: #4CAF50;
             color: white;
             transform: rotateY(180deg);
+            visibility: hidden;
         }
 
         .card-back h4 {
@@ -102,6 +103,14 @@
 
         .nav-buttons button:hover {
             background-color: #777;
+        }
+
+        .play-btn {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .nav-title {
@@ -161,7 +170,8 @@
     <div class="nav-title">Ciudadania Americana 2026</div>
     <div class="nav-buttons">
 
-        <button id="language-toggle">Idiomas</button>
+        <button id="btnaudio"> 🔊 Audio</button>
+        <button id="language-toggle">🌐 Idiomas</button>
     </div>
 </nav>
 
@@ -1093,6 +1103,30 @@
 
 
         let currentLang = 'es';
+        let isMuted = false;
+
+        function playFlipSound() {
+            if (isMuted) return;
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+
+                oscillator.frequency.value = 800;
+                oscillator.type = 'sine';
+
+                gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + 0.1);
+            } catch (e) {
+                console.log('Audio no disponible');
+            }
+        }
 
         function renderCards() {
             container.innerHTML = '';
@@ -1109,6 +1143,7 @@
                 question.textContent = (index + 1) + ' - ' + pregunta;
                 question.style.margin = '0';
                 cardFront.appendChild(question);
+
                 card.appendChild(cardFront);
 
                 // Back de la tarjeta (respuesta correcta)
@@ -1123,11 +1158,38 @@
 
                 // Evento click para voltear la tarjeta
                 card.addEventListener('click', () => {
+                    playFlipSound();
+                    if (card.flipTimeout) clearTimeout(card.flipTimeout);
                     card.classList.toggle('flipped');
+                    if (card.classList.contains('flipped')) {
+                        cardFront.style.visibility = 'hidden';
+                        cardBack.style.visibility = 'visible';
+                        card.flipTimeout = setTimeout(() => {
+                            card.classList.remove('flipped');
+                            cardFront.style.visibility = 'visible';
+                            cardBack.style.visibility = 'hidden';
+                            card.flipTimeout = null;
+                        }, 5000);
+                    } else {
+                        cardFront.style.visibility = 'visible';
+                        cardBack.style.visibility = 'hidden';
+                    }
                 });
                 container.appendChild(card);
             });
         }
+
+        document.getElementById('btnaudio').addEventListener('click', () => {
+            isMuted = !isMuted;
+            const btnAudio = document.getElementById('btnaudio');
+            if (isMuted) {
+                btnAudio.textContent = '🔇 Audio';
+                btnAudio.style.backgroundColor = '#999';
+            } else {
+                btnAudio.textContent = '🔊 Audio';
+                btnAudio.style.backgroundColor = '#555';
+            }
+        });
 
         document.getElementById('language-toggle').addEventListener('click', () => {
             currentLang = currentLang === 'es' ? 'en' : 'es';
