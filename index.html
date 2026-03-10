@@ -24,6 +24,17 @@
             justify-content: center;
             align-items: center;
         }
+
+        .card {
+            min-width: 200px;
+            min-height: 100px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 <nav>
@@ -129,6 +140,26 @@
             }
         ];
 
+
+
+        //*
+        listData.forEach((item, index) => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.style.cssText = ' border: 1px solid #ccc; padding: 10px; cursor: pointer;';
+            const question = document.createElement('h3');
+            question.textContent = (index + 1) + ' ' + item.pregunta;
+            card.appendChild(question);
+
+            // card.appendChild(answerList);
+            card.addEventListener('click', () => {
+                card.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+            });
+            container.appendChild(card);
+        });
+        //*
+
+        /*
         listData.forEach((item, index) => {
             const card = document.createElement('div');
             card.className = 'card';
@@ -148,7 +179,7 @@
             });
             container.appendChild(card);
         });
-
+        */
 
 
     </script>
