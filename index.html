@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <style>
         html,
         body {
@@ -36,6 +37,7 @@
             align-items: center;
         }
     </style>
+
 </head>
 <nav>
     <div>Ciudadania Americana 2026 </div>
@@ -63,83 +65,159 @@
         const container = document.getElementById('card-container');
 
         const listData = [
-            {
-                id: 1,
-                pregunta: 'Cual es mi nombre?',
-                Repuesta: ["uno", "dos"]
-            },
-            {
-                id: 2,
-                pregunta: 'Cual es mi edad?',
-                Repuesta: ["25", "30", "35"]
-            },
-            {
-                id: 3,
-                pregunta: 'Donde vives?',
-                Repuesta: ["New York", "Los Angeles", "Chicago"]
-            },
-            {
-                id: 1,
-                pregunta: 'Cual es mi nombre?',
-                Repuesta: ["uno", "dos"]
-            },
-            {
-                id: 2,
-                pregunta: 'Cual es mi edad?',
-                Repuesta: ["25", "30", "35"]
-            },
-            {
-                id: 3,
-                pregunta: 'Donde vives?',
-                Repuesta: ["New York", "Los Angeles", "Chicago"]
-            },
-            {
-                id: 1,
-                pregunta: 'Cual es mi nombre?',
-                Repuesta: ["uno", "dos"]
-            },
-            {
-                id: 2,
-                pregunta: 'Cual es mi edad?',
-                Repuesta: ["25", "30", "35"]
-            },
-            {
-                id: 3,
-                pregunta: 'Donde vives?',
-                Repuesta: ["New York", "Los Angeles", "Chicago"]
-            },
-            {
-                id: 1,
-                pregunta: 'Cual es mi nombre?',
-                Repuesta: ["uno", "dos"]
-            },
-            {
-                id: 2,
-                pregunta: 'Cual es mi edad?',
-                Repuesta: ["25", "30", "35"]
-            },
-            {
-                id: 3,
-                pregunta: 'Donde vives?',
-                Repuesta: ["New York", "Los Angeles", "Chicago"]
-            },
-            {
-                id: 1,
-                pregunta: 'Cual es mi nombre?',
-                Repuesta: ["uno", "dos"]
-            },
-            {
-                id: 2,
-                pregunta: 'Cual es mi edad?',
-                Repuesta: ["25", "30", "35"]
-            },
-            {
-                id: 3,
-                pregunta: 'Donde vives?',
-                Repuesta: ["New York", "Los Angeles", "Chicago"]
-            }
-        ];
+            { id: 1, pregunta: "¿Cuál es la ley suprema de la nación?", Respuesta: ["*La Constitución", "La Declaración de Independencia", "El Congreso", "La Corte Suprema"] },
+            { id: 2, pregunta: "¿Qué hace la Constitución?", Respuesta: ["Define el gobierno", "*Protege los derechos del pueblo", "Establece los estados", "Controla elecciones"] },
+            { id: 3, pregunta: "Las primeras tres palabras de la Constitución contienen la idea de autogobierno. ¿Cuáles son?", Respuesta: ["United States First", "Freedom for All", "*We the People", "Liberty and Justice"] },
+            { id: 4, pregunta: "¿Qué es una enmienda?", Respuesta: ["Una ley estatal", "Un voto", "*Un cambio a la Constitución", "Una decisión judicial"] },
+            { id: 5, pregunta: "¿Cómo se llaman las primeras diez enmiendas?", Respuesta: ["Las leyes federales", "*La Carta de Derechos", "Las leyes civiles", "Las libertades nacionales"] },
+            { id: 6, pregunta: "¿Cuál es un derecho de la Primera Enmienda?", Respuesta: ["Portar armas", "*Libertad de expresión", "Derecho a votar", "Derecho a educación"] },
+            { id: 7, pregunta: "¿Cuántas enmiendas tiene la Constitución?", Respuesta: ["10", "26", "50", "*27"] },
+            { id: 8, pregunta: "¿Qué hizo la Declaración de Independencia?", Respuesta: ["Creó el gobierno", "*Anunció independencia de Gran Bretaña", "Escribió leyes", "Fundó el Congreso"] },
+            { id: 9, pregunta: "¿Cuáles son dos derechos en la Declaración de Independencia?", Respuesta: ["Educación y trabajo", "*Vida y libertad", "Seguridad y voto", "Propiedad y dinero"] },
+            { id: 10, pregunta: "¿Qué es libertad de religión?", Respuesta: ["Seguir religión oficial", "*Practicar cualquier religión o ninguna", "Solo religiones aprobadas", "El gobierno elige"] },
 
+            { id: 11, pregunta: "¿Cuál es el sistema económico de EE.UU.?", Respuesta: ["Comunismo", "Socialismo", "*Economía de mercado", "Monarquía"] },
+            { id: 12, pregunta: "¿Qué es el estado de derecho?", Respuesta: ["Presidente decide todo", "*Nadie está por encima de la ley", "Solo jueces siguen leyes", "Solo Congreso manda"] },
+            { id: 13, pregunta: "Nombre una rama del gobierno.", Respuesta: ["Ejecutiva", "Legislativa", "Judicial", "*Ejecutiva"] },
+            { id: 14, pregunta: "¿Qué evita que una rama sea demasiado poderosa?", Respuesta: ["Gobernadores", "*Checks and balances", "La policía", "El ejército"] },
+            { id: 15, pregunta: "¿Quién está a cargo del poder ejecutivo?", Respuesta: ["Congreso", "Senado", "*El Presidente", "Corte Suprema"] },
+
+            { id: 16, pregunta: "¿Quién crea las leyes federales?", Respuesta: ["Presidente", "*Congreso", "Corte Suprema", "Gobernadores"] },
+            { id: 17, pregunta: "¿Cuáles son las dos partes del Congreso?", Respuesta: ["Tribunal y Senado", "*Senado y Cámara de Representantes", "Gobierno y Corte", "Estados y ciudades"] },
+            { id: 18, pregunta: "¿Cuántos senadores hay?", Respuesta: ["50", "200", "435", "*100"] },
+            { id: 19, pregunta: "¿Cuántos miembros tiene la Cámara de Representantes?", Respuesta: ["100", "200", "50", "*435"] },
+            { id: 20, pregunta: "¿Por cuántos años se elige a un senador?", Respuesta: ["2", "4", "*6", "8"] },
+
+            { id: 21, pregunta: "¿Por cuántos años se elige a un representante?", Respuesta: ["*2", "4", "6", "8"] },
+            { id: 22, pregunta: "¿Quién representa a todos los ciudadanos de su distrito?", Respuesta: ["Gobernador", "*Representante", "Senador", "Juez"] },
+            { id: 23, pregunta: "¿Por cuántos años se elige al Presidente?", Respuesta: ["2", "*4", "6", "8"] },
+            { id: 24, pregunta: "¿En qué mes votamos para Presidente?", Respuesta: ["Junio", "Julio", "*Noviembre", "Enero"] },
+            { id: 25, pregunta: "¿Quién es el Comandante en Jefe del ejército?", Respuesta: ["Congreso", "Senado", "*El Presidente", "Gobernador"] },
+
+            { id: 26, pregunta: "¿Quién firma los proyectos de ley?", Respuesta: ["Congreso", "*El Presidente", "Corte Suprema", "Gobernadores"] },
+            { id: 27, pregunta: "¿Quién veta proyectos de ley?", Respuesta: ["Congreso", "*El Presidente", "Senado", "Tribunales"] },
+            { id: 28, pregunta: "¿Qué hace el gabinete?", Respuesta: ["Escribe leyes", "*Aconseja al Presidente", "Controla estados", "Hace elecciones"] },
+            { id: 29, pregunta: "Nombre un cargo del gabinete.", Respuesta: ["Secretario de Defensa", "Secretario de Estado", "Secretario del Tesoro", "*Secretario de Estado"] },
+            { id: 30, pregunta: "¿Qué hace el poder judicial?", Respuesta: ["Hace leyes", "*Interpreta leyes", "Ejecuta leyes", "Controla elecciones"] },
+
+            { id: 31, pregunta: "¿Cuál es el tribunal más alto?", Respuesta: ["Tribunal Federal", "Tribunal Estatal", "Tribunal Militar", "*Corte Suprema"] },
+            { id: 32, pregunta: "¿Cuántos jueces hay en la Corte Suprema?", Respuesta: ["7", "8", "10", "*9"] },
+            { id: 33, pregunta: "¿Quién es el Presidente del Tribunal Supremo?", Respuesta: ["Juez principal", "*Chief Justice", "Presidente", "Senador"] },
+            { id: 34, pregunta: "¿Qué hace el federalismo?", Respuesta: ["Presidente controla todo", "*Divide poder entre gobierno nacional y estados", "Estados controlan todo", "Solo ciudades gobiernan"] },
+            { id: 35, pregunta: "¿Quién es el gobernador de su estado?", Respuesta: ["Alcalde", "*Depende del estado", "Presidente", "Senador"] },
+
+            { id: 36, pregunta: "¿Cuál es la capital de su estado?", Respuesta: ["Nueva York", "Washington", "*Depende del estado", "Los Ángeles"] },
+            { id: 37, pregunta: "¿Cuáles son los dos partidos principales?", Respuesta: ["Verde y Libertario", "*Demócrata y Republicano", "Laborista y Socialista", "Federalista y Unión"] },
+            { id: 38, pregunta: "¿Qué partido es el Presidente actual?", Respuesta: ["Republicano", "Demócrata", "*Depende del momento", "Independiente"] },
+            { id: 39, pregunta: "¿Qué responsabilidad es solo para ciudadanos?", Respuesta: ["Trabajar", "*Votar", "Pagar impuestos", "Ir a la escuela"] },
+            { id: 40, pregunta: "¿Qué derecho tienen solo los ciudadanos?", Respuesta: ["Tener casa", "Trabajar", "*Votar en elecciones federales", "Conducir"] },
+
+            { id: 41, pregunta: "¿Cuál fue la guerra entre Norte y Sur?", Respuesta: ["Revolución", "Guerra Mundial", "*Guerra Civil", "Guerra Fría"] },
+            { id: 42, pregunta: "¿Quién fue el primer Presidente?", Respuesta: ["Thomas Jefferson", "John Adams", "*George Washington", "Abraham Lincoln"] },
+            { id: 43, pregunta: "¿Quién liberó a los esclavos?", Respuesta: ["George Washington", "*Abraham Lincoln", "Andrew Jackson", "John Adams"] },
+            { id: 44, pregunta: "¿Quién escribió la Declaración de Independencia?", Respuesta: ["Washington", "Adams", "*Thomas Jefferson", "Franklin"] },
+            { id: 45, pregunta: "¿En qué año se firmó la Declaración de Independencia?", Respuesta: ["1775", "1783", "*1776", "1800"] },
+
+            { id: 46, pregunta: "¿Qué territorio compró EE.UU. a Francia?", Respuesta: ["Texas", "Florida", "*Louisiana", "California"] },
+            { id: 47, pregunta: "¿Qué movimiento trató de terminar la esclavitud?", Respuesta: ["Industrialización", "*Abolicionismo", "Reforma", "Sindicalismo"] },
+            { id: 48, pregunta: "¿Quién fue Presidente durante la Guerra Civil?", Respuesta: ["Washington", "Jefferson", "*Abraham Lincoln", "Grant"] },
+            { id: 49, pregunta: "¿Qué guerra fue entre EE.UU. y México?", Respuesta: ["Revolución", "*Guerra México-Estados Unidos", "Guerra Civil", "Guerra Mundial"] },
+            { id: 50, pregunta: "¿Qué guerra peleó EE.UU. en 1917?", Respuesta: ["Civil", "Revolución", "*Primera Guerra Mundial", "Corea"] },
+
+            { id: 51, pregunta: "¿Qué guerra peleó EE.UU. en 1941?", Respuesta: ["Vietnam", "Corea", "*Segunda Guerra Mundial", "Civil"] },
+            { id: 52, pregunta: "¿Quién fue Presidente durante la Gran Depresión y WWII?", Respuesta: ["Lincoln", "Truman", "*Franklin D. Roosevelt", "Wilson"] },
+            { id: 53, pregunta: "¿Qué movimiento trató de terminar la discriminación racial?", Respuesta: ["Industrial", "*Movimiento por los derechos civiles", "Reforma", "Federal"] },
+            { id: 54, pregunta: "¿Quién fue líder del movimiento por derechos civiles?", Respuesta: ["Lincoln", "Washington", "*Martin Luther King Jr.", "Adams"] },
+            { id: 55, pregunta: "¿Qué hizo Martin Luther King Jr.?", Respuesta: ["Fue presidente", "*Luchó por igualdad civil", "Fue senador", "Fue juez"] },
+
+            { id: 56, pregunta: "¿Cuál océano está en la costa este?", Respuesta: ["Pacífico", "Ártico", "*Atlántico", "Índico"] },
+            { id: 57, pregunta: "¿Cuál océano está en la costa oeste?", Respuesta: ["Atlántico", "*Pacífico", "Ártico", "Índico"] },
+            { id: 58, pregunta: "Nombre uno de los Grandes Lagos.", Respuesta: ["Lago Azul", "*Lago Michigan", "Lago Grande", "Lago Sur"] },
+            { id: 59, pregunta: "¿Qué río es el más largo?", Respuesta: ["Colorado", "Hudson", "*Mississippi", "Ohio"] },
+            { id: 60, pregunta: "¿Qué desierto grande está en EE.UU.?", Respuesta: ["Sahara", "*Mojave", "Gobi", "Arabia"] },
+
+            { id: 61, pregunta: "¿Qué territorio compró EE.UU. a Rusia?", Respuesta: ["Hawái", "Texas", "*Alaska", "Florida"] },
+            { id: 62, pregunta: "¿Cuál es la capital del país?", Respuesta: ["Nueva York", "Los Ángeles", "*Washington DC", "Chicago"] },
+            { id: 63, pregunta: "¿Dónde está la Estatua de la Libertad?", Respuesta: ["California", "Texas", "*Nueva York", "Florida"] },
+            { id: 64, pregunta: "¿Por qué tiene 13 franjas la bandera?", Respuesta: ["13 presidentes", "13 estados actuales", "*13 colonias originales", "13 guerras"] },
+            { id: 65, pregunta: "¿Por qué tiene 50 estrellas la bandera?", Respuesta: ["50 presidentes", "50 ciudades", "*50 estados", "50 guerras"] },
+
+            { id: 66, pregunta: "¿Cuál es el himno nacional?", Respuesta: ["America the Beautiful", "God Bless America", "*The Star-Spangled Banner", "Freedom Song"] },
+            { id: 67, pregunta: "¿Cuándo celebramos el Día de la Independencia?", Respuesta: ["1 junio", "*4 julio", "14 febrero", "1 enero"] },
+            { id: 68, pregunta: "Nombre dos días festivos nacionales.", Respuesta: ["Navidad y Pascua", "*Día de la Independencia y Día del Trabajo", "Halloween y Pascua", "Año Nuevo y Pascua"] },
+            { id: 69, pregunta: "¿Qué celebramos en Memorial Day?", Respuesta: ["Presidente", "*Soldados que murieron en servicio", "Independencia", "Gobernadores"] },
+            { id: 70, pregunta: "¿Qué celebramos en Labor Day?", Respuesta: ["Presidente", "*Trabajadores", "Soldados", "Estados"] },
+
+            { id: 71, pregunta: "¿Qué celebramos en Presidents Day?", Respuesta: ["Soldados", "*Presidentes", "Estados", "Constitución"] },
+            { id: 72, pregunta: "¿Qué celebramos en Veterans Day?", Respuesta: ["Maestros", "*Veteranos militares", "Gobernadores", "Jueces"] },
+            { id: 73, pregunta: "¿Qué celebramos el Día de Acción de Gracias?", Respuesta: ["Guerra", "*Agradecimiento y cosecha", "Elecciones", "Trabajo"] },
+            { id: 74, pregunta: "¿Qué océano está cerca de Hawái?", Respuesta: ["Atlántico", "Ártico", "*Pacífico", "Índico"] },
+            { id: 75, pregunta: "¿Qué estado es el más grande?", Respuesta: ["Texas", "California", "*Alaska", "Florida"] },
+
+            { id: 76, pregunta: "¿Qué estado tiene más población?", Respuesta: ["Texas", "Florida", "*California", "Nueva York"] },
+            { id: 77, pregunta: "¿Qué ciudad es la más grande?", Respuesta: ["Chicago", "Houston", "*Nueva York", "Miami"] },
+            { id: 78, pregunta: "¿Quién fue Benjamin Franklin?", Respuesta: ["Presidente", "*Padre fundador", "General", "Juez"] },
+            { id: 79, pregunta: "¿Quién fue George Washington?", Respuesta: ["Senador", "*Primer Presidente", "Juez", "Gobernador"] },
+            { id: 80, pregunta: "¿Quién fue Thomas Jefferson?", Respuesta: ["Juez", "*Autor de la Declaración", "General", "Gobernador"] },
+
+            { id: 81, pregunta: "¿Quién fue Alexander Hamilton?", Respuesta: ["Presidente", "*Primer Secretario del Tesoro", "Juez", "Gobernador"] },
+            { id: 82, pregunta: "¿Quién fue Susan B. Anthony?", Respuesta: ["Actriz", "*Luchó por derechos de mujeres", "Presidenta", "Jueza"] },
+            { id: 83, pregunta: "¿Quién fue Rosa Parks?", Respuesta: ["Senadora", "*Activista de derechos civiles", "Gobernadora", "Jueza"] },
+            { id: 84, pregunta: "¿Qué hizo el Ferrocarril Subterráneo?", Respuesta: ["Transporte", "*Ayudó a esclavos escapar", "Minería", "Correo"] },
+            { id: 85, pregunta: "¿Qué fue la Guerra Fría?", Respuesta: ["Guerra civil", "*Conflicto político con la URSS", "Guerra con México", "Revolución"] },
+
+            { id: 86, pregunta: "¿Qué hizo la OTAN?", Respuesta: ["Economía", "*Alianza militar", "Educación", "Salud"] },
+            { id: 87, pregunta: "¿Qué evento ocurrió el 11 de septiembre de 2001?", Respuesta: ["Elección", "*Ataques terroristas", "Tratado", "Independencia"] },
+            { id: 88, pregunta: "¿Quién es responsable de la seguridad nacional?", Respuesta: ["Estados", "*Gobierno federal", "Ciudades", "Escuelas"] },
+            { id: 89, pregunta: "¿Qué agencia maneja inmigración?", Respuesta: ["FBI", "CIA", "*USCIS", "NASA"] },
+            { id: 90, pregunta: "¿Qué documento muestra que eres ciudadano?", Respuesta: ["Licencia", "Visa", "*Certificado de naturalización", "Pasaporte extranjero"] },
+
+            { id: 91, pregunta: "¿Qué promesa haces al naturalizarte?", Respuesta: ["Apoyar estados", "*Ser leal a EE.UU.", "Votar siempre", "Trabajar"] },
+            { id: 92, pregunta: "¿Qué significa jurar lealtad?", Respuesta: ["Pagar impuestos", "*Prometer fidelidad", "Viajar", "Trabajar"] },
+            { id: 93, pregunta: "¿Cuál es un derecho al vivir en EE.UU.?", Respuesta: ["Gobernar", "*Libertad", "Ser senador", "Ser juez"] },
+            { id: 94, pregunta: "¿Cuál es una responsabilidad?", Respuesta: ["Ser presidente", "*Obedecer la ley", "Ser senador", "Ser juez"] },
+            { id: 95, pregunta: "¿Qué debes hacer cuando la ley lo requiere?", Respuesta: ["Viajar", "*Servir en jurado", "Ser alcalde", "Ser juez"] },
+
+            { id: 96, pregunta: "¿Qué debes hacer si eres hombre entre 18-25?", Respuesta: ["Trabajar", "*Registrarte en Selective Service", "Votar", "Viajar"] },
+            { id: 97, pregunta: "¿Qué es votar?", Respuesta: ["Trabajar", "*Elegir líderes", "Viajar", "Comprar"] },
+            { id: 98, pregunta: "¿Qué partido político es Abraham Lincoln?", Respuesta: ["Demócrata", "*Republicano", "Verde", "Libertario"] },
+            { id: 99, pregunta: "¿Qué partido político es Franklin Roosevelt?", Respuesta: ["Republicano", "*Demócrata", "Verde", "Libertario"] },
+            { id: 100, pregunta: "¿Quién fue el presidente durante WWI?", Respuesta: ["Lincoln", "Roosevelt", "*Woodrow Wilson", "Adams"] },
+
+            { id: 101, pregunta: "¿Qué guerra ocurrió en los años 1950 en Corea?", Respuesta: ["Civil", "*Guerra de Corea", "Vietnam", "Revolución"] },
+            { id: 102, pregunta: "¿Qué guerra ocurrió en los años 1960-70?", Respuesta: ["Corea", "*Vietnam", "WWII", "Revolución"] },
+            { id: 103, pregunta: "¿Qué organización internacional tiene sede en NYC?", Respuesta: ["OTAN", "UE", "*ONU", "OEA"] },
+            { id: 104, pregunta: "¿Qué representa la Estatua de la Libertad?", Respuesta: ["Riqueza", "*Libertad", "Poder", "Gobierno"] },
+            { id: 105, pregunta: "¿Qué dice la Estatua de la Libertad a inmigrantes?", Respuesta: ["Trabaja", "*Bienvenidos", "Vota", "Estudia"] },
+
+            { id: 106, pregunta: "¿Quién ayudó a escribir los Federalist Papers?", Respuesta: ["Lincoln", "*Alexander Hamilton", "Roosevelt", "Grant"] },
+            { id: 107, pregunta: "¿Qué grupo fue traído a América como esclavos?", Respuesta: ["Europeos", "*Africanos", "Asiáticos", "Canadienses"] },
+            { id: 108, pregunta: "¿Por qué lucharon los colonos contra Gran Bretaña?", Respuesta: ["Clima", "*Impuestos altos", "Religión", "Idioma"] },
+            { id: 109, pregunta: "¿Quién vivía en América antes de europeos?", Respuesta: ["Canadienses", "*Nativos americanos", "Mexicanos", "Franceses"] },
+            { id: 110, pregunta: "¿Qué hicieron los peregrinos?", Respuesta: ["Explorar", "*Buscar libertad religiosa", "Minería", "Pesca"] },
+
+            { id: 111, pregunta: "¿Dónde firmaron la Constitución?", Respuesta: ["Nueva York", "Boston", "*Filadelfia", "Miami"] },
+            { id: 112, pregunta: "¿Qué documento vino primero?", Respuesta: ["Constitución", "*Declaración de Independencia", "Carta de Derechos", "Leyes"] },
+            { id: 113, pregunta: "¿Quién era enemigo en WWII?", Respuesta: ["Canadá", "*Alemania y Japón", "México", "Brasil"] },
+            { id: 114, pregunta: "¿Quién ganó WWII?", Respuesta: ["Alemania", "Japón", "*Aliados", "Italia"] },
+            { id: 115, pregunta: "¿Qué presidente usó bomba atómica?", Respuesta: ["Roosevelt", "*Harry Truman", "Kennedy", "Johnson"] },
+
+            { id: 116, pregunta: "¿Qué muro cayó en 1989?", Respuesta: ["Roma", "China", "*Muro de Berlín", "París"] },
+            { id: 117, pregunta: "¿Qué simboliza la bandera?", Respuesta: ["Riqueza", "*Libertad y unión", "Guerra", "Poder"] },
+            { id: 118, pregunta: "¿Qué día es Flag Day?", Respuesta: ["4 julio", "1 enero", "*14 junio", "25 diciembre"] },
+            { id: 119, pregunta: "¿Qué juramento se dice a la bandera?", Respuesta: ["Juramento militar", "*Pledge of Allegiance", "Juramento civil", "Juramento legal"] },
+            { id: 120, pregunta: "¿Qué significa “E Pluribus Unum”?", Respuesta: ["Dios con nosotros", "*De muchos, uno", "Libertad", "Paz"] },
+
+            { id: 121, pregunta: "¿Cuál es el lema nacional?", Respuesta: ["Freedom first", "Unity forever", "*In God We Trust", "America strong"] },
+            { id: 122, pregunta: "¿Qué animal es símbolo nacional?", Respuesta: ["León", "*Águila calva", "Oso", "Lobo"] },
+            { id: 123, pregunta: "¿Qué edificio es hogar del presidente?", Respuesta: ["Capitolio", "*Casa Blanca", "Pentágono", "Tribunal"] },
+            { id: 124, pregunta: "¿Dónde se reúne el Congreso?", Respuesta: ["Casa Blanca", "*Capitolio", "Pentágono", "Suprema Corte"] },
+            { id: 125, pregunta: "¿Dónde está la Corte Suprema?", Respuesta: ["Nueva York", "*Washington DC", "Chicago", "Texas"] },
+
+            { id: 126, pregunta: "¿Qué edificio es del Departamento de Defensa?", Respuesta: ["Casa Blanca", "*Pentágono", "Capitolio", "NASA"] },
+            { id: 127, pregunta: "¿Qué organización explora el espacio?", Respuesta: ["FBI", "CIA", "*NASA", "USCIS"] },
+            { id: 128, pregunta: "¿Qué documento permite votar como ciudadano naturalizado?", Respuesta: ["Visa", "Green Card", "*Certificado de naturalización", "Licencia"] }
+        ];
 
 
         //*
