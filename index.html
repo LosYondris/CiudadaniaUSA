@@ -5,6 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .general {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,13 +34,83 @@
         Odio saepe et recusandae, at ut necessitatibus amet, aperiam voluptas nostrum corrupti deleniti
         asperiores delectus repellendus quam nam sint praesentium minima laboriosam.
     </p>
+    <div class="general">
+        <div class="tarjeta"
+            style="display: flex; overflow-x: auto; gap: 10px; padding: 10px; height: 100px; width: 300px; text-align: center; background-color: aqua;">
+            hola
+        </div>
 
-    <div id="idcard"></div>
+    </div>
+
+    <footer>
+        <div id="card-container" style="display: flex; overflow-x: auto; gap: 10px; padding: 10px;">
+        </div>
+    </footer>
 
     <script>
-        const card = document.getElementById('idcard');
+        const container = document.getElementById('card-container');
 
         const listData = [
+            {
+                id: 1,
+                pregunta: 'Cual es mi nombre?',
+                Repuesta: ["uno", "dos"]
+            },
+            {
+                id: 2,
+                pregunta: 'Cual es mi edad?',
+                Repuesta: ["25", "30", "35"]
+            },
+            {
+                id: 3,
+                pregunta: 'Donde vives?',
+                Repuesta: ["New York", "Los Angeles", "Chicago"]
+            },
+            {
+                id: 1,
+                pregunta: 'Cual es mi nombre?',
+                Repuesta: ["uno", "dos"]
+            },
+            {
+                id: 2,
+                pregunta: 'Cual es mi edad?',
+                Repuesta: ["25", "30", "35"]
+            },
+            {
+                id: 3,
+                pregunta: 'Donde vives?',
+                Repuesta: ["New York", "Los Angeles", "Chicago"]
+            },
+            {
+                id: 1,
+                pregunta: 'Cual es mi nombre?',
+                Repuesta: ["uno", "dos"]
+            },
+            {
+                id: 2,
+                pregunta: 'Cual es mi edad?',
+                Repuesta: ["25", "30", "35"]
+            },
+            {
+                id: 3,
+                pregunta: 'Donde vives?',
+                Repuesta: ["New York", "Los Angeles", "Chicago"]
+            },
+            {
+                id: 1,
+                pregunta: 'Cual es mi nombre?',
+                Repuesta: ["uno", "dos"]
+            },
+            {
+                id: 2,
+                pregunta: 'Cual es mi edad?',
+                Repuesta: ["25", "30", "35"]
+            },
+            {
+                id: 3,
+                pregunta: 'Donde vives?',
+                Repuesta: ["New York", "Los Angeles", "Chicago"]
+            },
             {
                 id: 1,
                 pregunta: 'Cual es mi nombre?',
@@ -38,9 +128,12 @@
             }
         ];
 
-        listData.forEach((item) => {
+        listData.forEach((item, index) => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.style.cssText = ' border: 1px solid #ccc; padding: 20px; cursor: pointer;';
             const question = document.createElement('h3');
-            question.textContent = item.pregunta;
+            question.textContent = item.pregunta + ' ' + (index + 1);
             card.appendChild(question);
             const answerList = document.createElement('ul');
             item.Repuesta.forEach((answer) => {
@@ -49,6 +142,10 @@
                 answerList.appendChild(answerItem);
             });
             card.appendChild(answerList);
+            card.addEventListener('click', () => {
+                card.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+            });
+            container.appendChild(card);
         });
 
 
